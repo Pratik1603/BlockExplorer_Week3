@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import {
   BrowserRouter,
   Route,
-  Routes
-
+  Routes,
+ 
 } from "react-router-dom";
 import Nft from "./components/Nft";
 import AccountTxs from "./components/accountTxs";
@@ -18,8 +18,9 @@ function App() {
     return (
         <div className="p-4 bg-gradient-to-br  from-[#83c1f8] from-40%  to-[#f7b983] to-70% min-h-[100vh]">
             <Navbar/>
-            <BrowserRouter>
+        
               <Routes>
+              
                 <Route path="/" element={<div className="w-full p-2 flex justify-evenly">
                   <Blocks/>
                   <Transactions/>
@@ -30,7 +31,7 @@ function App() {
                 <Route path="/account-balance" element={<AccountBalance />} />
                 <Route path="/nft" element={<Nft />} />
               </Routes>
-          </BrowserRouter>
+          
          
          
         </div>

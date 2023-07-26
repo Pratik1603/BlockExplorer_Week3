@@ -1,18 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import MenuIcon from '@mui/icons-material/Menu';
-
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
-
-
-
+    const navigate=useNavigate();
     const [state, setState] = React.useState(false);
-
 
     const navigation = [
         { title: "Home", path: "/" },
-        { title: "Account", path: "/account-balance" },
-        { title: "NFT", path: "/nft" },
+        { title: "Account", path: "account-balance" },
+        { title: "NFT", path: "nft" },
 
     ];
 
@@ -37,9 +34,11 @@ const Navbar = () => {
 
                         {navigation.map((item, idx) => {
                             return (
-                                <li key={idx} className="text-black font-bold  hover:text-[#c34747] text-lg hover:font-bold hover:text-xl ease-in-out">
-                                    <a style={{ textDecoration: "none" }} href={item.path} className="block" >{item.title}</a>
+                              
+                                <li key={idx} className="text-black font-bold  hover:text-[#c34747] text-lg hover:font-bold hover:text-xl ease-in-out" onClick={()=>navigate(item.path)}>
+                                       <div style={{ textDecoration: "none" }} className="block" >{item.title}</div>
                                 </li>
+                                
                             );
                         })}
                     </ul>
